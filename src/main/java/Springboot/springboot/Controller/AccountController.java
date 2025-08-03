@@ -108,8 +108,6 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something went Wrong" + e.getMessage());
         }
     }
-
-
    @PostMapping("/getUserWithTransactions")
    public UserTransactionResponse getUserWithTransactions(@RequestBody TransactionRequestDto dto) {
        UserAccount account = userRepository.findByAccountNumberAndUserName(
